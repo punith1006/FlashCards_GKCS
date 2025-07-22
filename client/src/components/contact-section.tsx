@@ -108,7 +108,7 @@ export default function ContactSection() {
                 </div>
               </div>
               
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <div className="w-10 h-10 bg-[var(--gk-orange)] rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-white" />
                 </div>
@@ -116,10 +116,10 @@ export default function ContactSection() {
                   <div className="font-semibold">Community</div>
                   <div className="text-slate-300">Join our learning community</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             
-            <div className="flex gap-4 mt-8">
+            {/* <div className="flex gap-4 mt-8">
               <Button className="px-6 py-3 bg-[var(--gk-blue)] text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center gap-2">
                 <ShoppingCart className="w-4 h-4" />
                 Order Now
@@ -131,7 +131,7 @@ export default function ContactSection() {
                 <Download className="w-4 h-4" />
                 Download Brochure
               </Button>
-            </div>
+            </div> */}
           </motion.div>
           
           <motion.div 

@@ -8,15 +8,18 @@ import cseAiCardImage from "@assets/cse ai card 16_1753102070555.jpg";
 import ecoSystemImage from "@assets/image (1)_1753102070556.jpg";
 import indexImage from "@assets/index_1753102070557.png";
 import tocImage from "@assets/TOC 1_1753102070558.jpg";
+import mainindex from "../../../attached_assets/mainindex.png";
 
 const products = [
   {
     id: 1,
-    title: "Master AI",
+    title: "Engineering & Technology",
     subtitle: "The Leitner Way",
-    description: "Comprehensive collection covering artificial intelligence fundamentals, machine learning, and advanced concepts.",
+    description: "Accelerate your mastery with AI-powered Engineering & Technology Flashcards. Designed for aspiring engineers and tech professionals, these flashcards unlock core concepts and advanced topics using artificial intelligence.",
     cardCount: "500+ Cards",
-    level: "Advanced",
+    level: "Beginner",
+    level2:"Intermediate",
+    level3:"Advanced",
     icon: "🤖",
     bgGradient: "from-[var(--gk-blue)] to-[var(--gk-cyan)]",
     textColor: "text-[var(--gk-blue)]",
@@ -24,16 +27,18 @@ const products = [
     levelBg: "bg-[var(--gk-green)]/10",
     levelColor: "text-[var(--gk-green)]",
     cardNumber: "AI",
-    image: cseAiCardImage,
+    image: aiCardAllImage,
     imageAlt: "Master AI flashcards with box packaging",
   },
   {
     id: 2,
-    title: "Intelligence",
+    title: "Business",
     subtitle: "Core Concepts",
-    description: "Essential concepts about artificial intelligence, machine thinking, and cognitive computing principles.",
+    description: "Boost your management and entrepreneurial skills with the Business AI Flashcards stream. These cards blend foundational business knowledge with today’s most in-demand AI applications.",
     cardCount: "45 Cards",
-    level: "Beginner",
+   level: "Beginner",
+    level2:"Intermediate",
+    level3:"Advanced",
     icon: "🧠",
     bgGradient: "from-[var(--gk-green)] to-emerald-400",
     textColor: "text-[var(--gk-green)]",
@@ -41,16 +46,18 @@ const products = [
     levelBg: "bg-slate-100",
     levelColor: "text-slate-600",
     cardNumber: "01",
-    image: beginnerFrontImage,
+    image: aiCardAllImage,
     imageAlt: "Beginner Intelligence flashcards stack",
   },
   {
     id: 3,
-    title: "Programming",
+    title: "Finance",
     subtitle: "Algorithms & Code",
-    description: "Programming concepts, algorithms, and coding patterns specific to AI development and implementation.",
+    description: "Build robust financial expertise through Finance AI Flashcards your toolkit for exams and the evolving world of fintech",
     cardCount: "65 Cards",
-    level: "Intermediate",
+   level: "Beginner",
+    level2:"Intermediate",
+    level3:"Advanced",
     icon: "💻",
     bgGradient: "from-[var(--gk-orange)] to-amber-400",
     textColor: "text-[var(--gk-orange)]",
@@ -58,60 +65,9 @@ const products = [
     levelBg: "bg-[var(--gk-orange)]/10",
     levelColor: "text-[var(--gk-orange)]",
     cardNumber: "02",
-    image: indexImage,
-    imageAlt: "Programming flashcards collection",
-  },
-  {
-    id: 4,
-    title: "Advanced Series",
-    subtitle: "ML & Deep Learning",
-    description: "Deep learning, neural networks, and cutting-edge AI research topics for advanced practitioners.",
-    cardCount: "120 Cards",
-    level: "Expert",
-    icon: "📈",
-    bgGradient: "from-[var(--gk-brown)] to-purple-400",
-    textColor: "text-[var(--gk-brown)]",
-    bgColor: "bg-[var(--gk-brown)]",
-    levelBg: "bg-red-100",
-    levelColor: "text-red-600",
-    cardNumber: "03",
-    image: tocImage,
-    imageAlt: "Advanced AI flashcards with table of contents",
-  },
-  {
-    id: 5,
-    title: "Complete Bundle",
-    subtitle: "All Series Included",
-    description: "Full collection including all cards, bonus materials, and exclusive content for comprehensive AI mastery.",
-    cardCount: "730+ Cards",
-    level: "Save 40%",
-    icon: "📚",
-    bgGradient: "from-slate-700 to-slate-900",
-    textColor: "text-slate-700",
-    bgColor: "bg-slate-700",
-    levelBg: "bg-emerald-100",
-    levelColor: "text-emerald-600",
-    cardNumber: "∞",
     image: aiCardAllImage,
-    imageAlt: "Complete AI flashcard collection",
-  },
-  {
-    id: 6,
-    title: "Eco-System Package",
-    subtitle: "Complete Learning Environment",
-    description: "Comprehensive learning ecosystem with flashcards, study guides, progress tracking, and community access.",
-    cardCount: "All Tools",
-    level: "Premium",
-    icon: "🌟",
-    bgGradient: "from-emerald-600 to-teal-600",
-    textColor: "text-emerald-600",
-    bgColor: "bg-emerald-600",
-    levelBg: "bg-blue-100",
-    levelColor: "text-blue-600",
-    cardNumber: "ECO",
-    image: ecoSystemImage,
-    imageAlt: "Eco-system package with learning materials",
-  },
+    imageAlt: "Programming flashcards collection",
+  }
 ];
 
 export default function ProductsSection() {
@@ -129,7 +85,7 @@ export default function ProductsSection() {
   };
 
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="products" className="py-10 bg-white">
       <div className="container mx-auto px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -165,7 +121,7 @@ export default function ProductsSection() {
                 <motion.img
                   src={product.image}
                   alt={product.imageAlt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fill"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -212,17 +168,17 @@ export default function ProductsSection() {
                     <h4 className="font-semibold text-slate-800 text-lg group-hover:text-[var(--gk-blue)] transition-colors">
                       {product.title}
                     </h4>
-                    <p className="text-sm text-slate-500">{product.subtitle}</p>
+                    {/* <p className="text-sm text-slate-500">{product.subtitle}</p> */}
                   </div>
                 </div>
                 
-                <p className="text-slate-600 text-sm mb-4 leading-relaxed">{product.description}</p>
+                <p className="text-slate-600 text-sm mb-4 text-justify leading-relaxed">{product.description}</p>
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className={`text-xs bg-slate-100 ${product.textColor} px-3 py-1 rounded-full font-medium`}>
+                    {/* <span className={`text-xs bg-slate-100 ${product.textColor} px-3 py-1 rounded-full font-medium`}>
                       {product.cardCount}
-                    </span>
+                    </span> */}
                     <span className={`text-xs ${product.levelBg} ${product.levelColor} px-3 py-1 rounded-full font-medium`}>
                       {product.level}
                     </span>
@@ -249,39 +205,11 @@ export default function ProductsSection() {
             </motion.div>
           ))}
           
-          {/* Index & Reference System */}
-          <motion.div
-            className="card-hover bg-white rounded-2xl shadow-lg overflow-hidden border md:col-span-2"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex">
-              <div className="flex-1 p-6">
-                <h4 className="font-semibold text-slate-800 mb-2">Index & Reference System</h4>
-                <p className="text-slate-600 text-sm mb-4">
-                  Comprehensive indexing system with cross-references, topic organization, and quick lookup guides for efficient studying.
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs bg-[var(--gk-cyan)]/10 text-[var(--gk-cyan)] px-2 py-1 rounded-full">Quick Reference</span>
-                    <span className="text-xs bg-[var(--gk-green)]/10 text-[var(--gk-green)] px-2 py-1 rounded-full">Organized</span>
-                  </div>
-                  <button className="text-[var(--gk-blue)] hover:opacity-80 transition-colors ml-auto">
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-              <div className="w-32 bg-gradient-to-br from-[var(--gk-cyan)] to-blue-400 flex items-center justify-center">
-                <span className="text-white text-2xl">📋</span>
-              </div>
-            </div>
-          </motion.div>
+          
         </div>
         
         {/* Call to Action */}
-        <motion.div 
+        {/* <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -292,7 +220,7 @@ export default function ProductsSection() {
             <ShoppingCart className="w-4 h-4" />
             View Complete Catalog
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
       
       {/* Product Modal */}

@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const features = [
   {
     icon: "🧠",
-    title: "Spaced Repetition System",
-    description: "Cards are reviewed at scientifically optimized intervals, moving through different boxes based on your mastery level for maximum retention.",
+    title: "Microlearning",
+    description: "Bite-sized content makes learning quick, focused, and easy to fit into busy schedules.",
     color: "bg-[var(--gk-green)]",
   },
   {
@@ -18,6 +18,12 @@ const features = [
     title: "Expert-Curated Content",
     description: "Each card is carefully crafted by AI experts and educators, ensuring accuracy and relevance to current industry standards.",
     color: "bg-[var(--gk-orange)]",
+  },
+   {
+    icon: "🇪🇳",
+    title: "Bilingual Support",
+    description: "Dual-language explanations help overcome language barriers and promote better understanding.",
+    color: "bg-[var(--gk-blue)]",
   },
 ];
 
@@ -49,7 +55,7 @@ export default function FeaturesSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">The Leitner Method Advantage</h2>
+          <h2 className="text-4xl font-bold text-slate-800 mb-2">Best Learning Methodologies for AI Flashcards</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Our scientifically-proven spaced repetition system optimizes learning efficiency and long-term retention.
           </p>
@@ -86,7 +92,7 @@ export default function FeaturesSection() {
           >
             {/* Leitner Box System Visualization */}
             <div className="bg-white rounded-2xl p-8 shadow-xl">
-              <h4 className="font-semibold text-slate-800 text-center mb-6">Leitner Box System</h4>
+              {/* <h4 className="font-semibold text-slate-800 text-center mb-6">Leitner Box System</h4> */}
               <div className="space-y-4">
                 {leitnerBoxes.map((box, index) => (
                   <motion.div

@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ShoppingCart, Star, Users, Clock } from "lucide-react";
+import { X, ShoppingCart, Star, Users, Clock,Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 interface Product {
   id: number;
   title: string;
@@ -22,13 +23,39 @@ interface ProductModalProps {
   onClose: () => void;
 }
 
+
+
+
+
+
+
+// Add this function to get branches based on title
+const getBranches = (title: string) => {
+  switch (title) {
+    case "Engineering & Technology":
+      return ["ECE", "EEE", "MCA", "Machine Learning", "Data Science"];
+    case "Business":
+      return ["BCom"];
+    case "Finance":
+      return ["Tally"];
+    default:
+      return [];
+  }
+};
+
+
+
+
 export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
+
+  const [selectedBranch, setSelectedBranch] = useState<string>("");
   if (!product) return null;
 
   const features = [
     { icon: Star, text: "Premium Quality Cards" },
     { icon: Users, text: "Expert Curated Content" },
     { icon: Clock, text: "Scientifically Optimized" },
+    {icon:Languages,text:"Bilingual"}
   ];
 
   return (
@@ -73,7 +100,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                 </motion.button>
                 
                 {/* Product badge */}
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2">
+                <div className="absolute bottom-6 left-4 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2">
                   <div className="flex items-center gap-2">
                     <span className="text-lg">{product.icon}</span>
                     <div>
@@ -95,8 +122,8 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                     <h2 className="text-3xl font-bold text-slate-800 mb-2">
                       {product.title}
                     </h2>
-                    <p className="text-lg text-slate-600 mb-4">{product.subtitle}</p>
-                    <p className="text-slate-600 leading-relaxed">{product.description}</p>
+                    {/* <p className="text-lg text-slate-600 mb-4">{product.subtitle}</p> */}
+                    <p className="text-slate-600 leading-relaxed text-justify">{product.description}</p>
                   </motion.div>
                   
                   <motion.div 
@@ -120,6 +147,32 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                       </motion.div>
                     ))}
                   </motion.div>
+
+                  <motion.div 
+  className="space-y-3"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5 }}
+>
+  <label className="block text-sm font-medium text-slate-700">
+    Select Branch
+  </label>
+  <div className="relative">
+    <select
+      value={selectedBranch}
+      onChange={(e) => setSelectedBranch(e.target.value)}
+      className="w-full p-3 border border-slate-200 rounded-xl bg-white text-slate-700 appearance-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+    >
+      <option value="">Choose a branch...</option>
+      {getBranches(product.title).map((branch) => (
+        <option key={branch} value={branch}>
+          {branch}
+        </option>
+      ))}
+    </select>
+    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+  </div>
+</motion.div>
                   
                   {/* Pricing info */}
                   <motion.div 
